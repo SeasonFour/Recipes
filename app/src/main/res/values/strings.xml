@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Recipes</string>
     <string name="action_settings">Settings</string>
+    <string name="name">Name of recipe</string>
+    <string name="serves">Serves how many people</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="method">Method</string>
 </resources>
