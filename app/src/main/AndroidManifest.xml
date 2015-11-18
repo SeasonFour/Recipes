@@ -19,9 +19,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Vegetarian" >
+        <activity android:name=".Vegetarian"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".Featured" >
+        <activity android:name=".Featured"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".NonVegeterian"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Salads"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Regions"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

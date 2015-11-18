@@ -35,5 +35,6 @@
                 android:text="@string/featured"
                 android:textSize="@dimen/guillotine_item_text_size" />
         </android.support.v7.widget.Toolbar>
-        </LinearLayout>
+
+</LinearLayout>
     </FrameLayout>

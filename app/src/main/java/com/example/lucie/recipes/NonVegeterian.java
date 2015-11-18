@@ -13,7 +13,7 @@ import com.yalantis.guillotine.animation.GuillotineAnimation;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class Vegetarian extends AppCompatActivity {
+public class NonVegeterian extends AppCompatActivity {
 
     private static final long RIPPLE_DURATION = 250;
 

@@ -51,5 +51,28 @@ public class MainActivity extends AppCompatActivity {
                     .build();
         }
 
+    public void featuredClick(View view){
+        Intent intent = new Intent(this, Featured.class);
+        startActivity(intent);
+
+    }
+
+    public void vegetarianClick(View view){
+        Intent intent = new Intent(this, Vegetarian.class);
+        startActivity(intent);
+
+    }
+
+
+    public void nonveganClick(View view){
+        Intent i = new Intent(this, NonVegeterian.class);
+        startActivity(i);
+    }
+
+    public void saladsClick(View v){
+        Intent i = new Intent(this,Salads.class);
+        startActivity(i);
+    }
+
     }
 

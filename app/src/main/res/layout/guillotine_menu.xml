@@ -23,9 +23,10 @@
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
-        android:id="@+id/profile_group"
+        android:id="@+id/vegetarian"
         style="@style/LinearLayout.GuillotineItem"
-        android:layout_marginTop="@dimen/guillotine_medium_margin">
+        android:layout_marginTop="@dimen/guillotine_medium_margin"
+        android:onClick="vegetarianClick">
 
         <ImageView
             style="@style/ImageView.GuillotineItem"
@@ -38,8 +39,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/feed_group"
-        style="@style/LinearLayout.GuillotineItem">
+        android:id="@+id/nonvegan"
+        style="@style/LinearLayout.GuillotineItem"
+        android:onClick="nonveganClick">
 
         <ImageView
             style="@style/ImageView.GuillotineItem"
@@ -51,8 +53,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/activity_group"
-        style="@style/LinearLayout.GuillotineItem">
+        android:id="@+id/featured"
+        style="@style/LinearLayout.GuillotineItem"
+        android:onClick="featuredClick">
 
         <ImageView
             style="@style/ImageView.GuillotineItem"
@@ -65,8 +68,10 @@
 
 
     <LinearLayout
-        android:id="@+id/settings_group"
-        style="@style/LinearLayout.GuillotineItem">
+        android:id="@+id/salads"
+        style="@style/LinearLayout.GuillotineItem"
+        android:nestedScrollingEnabled="false"
+        android:onClick="saladsClick">
 
         <ImageView
             style="@style/ImageView.GuillotineItem"
