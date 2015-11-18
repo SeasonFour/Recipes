@@ -22,26 +22,6 @@ import butterknife.InjectView;
 public class MainActivity extends AppCompatActivity {
         private static final long RIPPLE_DURATION = 250;
 
-<<<<<<< HEAD
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,Vegetarian.class);
-                startActivity(i);
-
-            }
-        });
-    }
-}
-=======
         @InjectView(R.id.toolbar)
         Toolbar toolbar;
         @InjectView(R.id.root)
@@ -73,6 +53,3 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
->>>>>>> c9b802e5c16ef2f149b501bb3d262014dd9dcf1c
