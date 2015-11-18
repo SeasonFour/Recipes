@@ -81,4 +81,19 @@
             style="@style/TextView.GuillotineItem"
             android:text="@string/salads" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/region"
+        style="@style/LinearLayout.GuillotineItem"
+        android:nestedScrollingEnabled="false"
+        android:onClick="regionClick">
+
+        <ImageView
+            style="@style/ImageView.GuillotineItem"
+            android:src="@drawable/menu" />
+
+        <com.example.lucie.recipes.widget.CanaroTextView
+            style="@style/TextView.GuillotineItem"
+            android:text="@string/regions" />
+    </LinearLayout>
 </LinearLayout>

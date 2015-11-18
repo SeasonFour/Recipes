@@ -74,5 +74,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void regionClick(View v){
+        Intent i = new Intent(this,Regions.class);
+        startActivity(i);
+    }
+
     }
 

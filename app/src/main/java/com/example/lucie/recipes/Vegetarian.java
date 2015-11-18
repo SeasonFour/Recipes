@@ -27,7 +27,7 @@ public class Vegetarian extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.activity_salads);
         ButterKnife.inject(this);
 
 
@@ -66,6 +66,11 @@ public class Vegetarian extends AppCompatActivity {
 
     public void saladsClick(View v){
         Intent i = new Intent(this,Salads.class);
+        startActivity(i);
+    }
+
+    public void regionClick(View v){
+        Intent i = new Intent(this,Regions.class);
         startActivity(i);
     }
 
