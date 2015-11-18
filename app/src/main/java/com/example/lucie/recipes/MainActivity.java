@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-import com.example.lucie.recipes.R;
+
 import com.yalantis.guillotine.animation.GuillotineAnimation;
 
 import butterknife.ButterKnife;
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         @InjectView(R.id.toolbar)
         Toolbar toolbar;
         @InjectView(R.id.root)
-        RelativeLayout root;
+        FrameLayout root;
         @InjectView(R.id.content_hamburger)
         View contentHamburger;
 

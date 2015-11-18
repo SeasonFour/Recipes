@@ -9,4 +9,8 @@
     <string name="feed">FEED</string>
     <string name="activity">ACTIVITY</string>
     <string name="settings">SETTINGS</string>
+    <string name="vegeterian">Vegetarian</string>
+    <string name="nonvegetarian">Non Vegetarian</string>
+    <string name="featured">Featured</string>
+    <string name="salads">Salads</string>
 </resources>
