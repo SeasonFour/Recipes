@@ -5,48 +5,52 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
+
+import com.example.lucie.recipes.R;
+import com.yalantis.guillotine.animation.GuillotineAnimation;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 public class MainActivity extends AppCompatActivity {
+        private static final long RIPPLE_DURATION = 250;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        @InjectView(R.id.toolbar)
+        Toolbar toolbar;
+        @InjectView(R.id.root)
+        RelativeLayout root;
+        @InjectView(R.id.content_hamburger)
+        View contentHamburger;
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.content_main);
+            ButterKnife.inject(this);
+
+
+            if (toolbar != null) {
+                setSupportActionBar(toolbar);
+                getSupportActionBar().setTitle(null);
             }
-        });
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+            View guillotineMenu = LayoutInflater.from(this).inflate(R.layout.guillotine_menu, null);
+            root.addView(guillotineMenu);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            new GuillotineAnimation.GuillotineBuilder(guillotineMenu, guillotineMenu.findViewById(R.id.guillotine_hamburger), contentHamburger)
+                    .setStartDelay(RIPPLE_DURATION)
+                    .setActionBarViewForAnimation(toolbar)
+                    .setClosedOnStart(true)
+                    .build();
         }
 
-        return super.onOptionsItemSelected(item);
     }
-}
+
+
+
