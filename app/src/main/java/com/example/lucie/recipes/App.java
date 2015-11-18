@@ -14,8 +14,12 @@ public class App extends Application {
 
     @Override
     public void onCreate() {
-        //Parse.initialize(this, "vPNdghWKPbYKtuBVy67rSfseUZydvaWjk0uBdGpy", "XwgHttUskG4ByiJb4ij5IphFN2tJOiXJ5sh7sLco");
         super.onCreate();
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+
+        Parse.initialize(this, "vPNdghWKPbYKtuBVy67rSfseUZydvaWjk0uBdGpy", "XwgHttUskG4ByiJb4ij5IphFN2tJOiXJ5sh7sLco");
+
         initTypeface();
     }
 

@@ -7,6 +7,7 @@ public class Food {
     int id;
     String name, ingredients, method;
 
+
     public Food(int id, String name, String ingredients, String method){
         this.id = id;
         this.name = name;

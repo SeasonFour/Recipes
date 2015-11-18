@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,8 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 
+import com.parse.Parse;
+import com.parse.ParseObject;
 import com.yalantis.guillotine.animation.GuillotineAnimation;
 
 import butterknife.ButterKnife;
@@ -21,6 +25,11 @@ import butterknife.InjectView;
 
 public class MainActivity extends AppCompatActivity {
         private static final long RIPPLE_DURATION = 250;
+
+    private RecyclerView fRecyclerView;
+    private RecyclerView.Adapter fAdapter;
+    private RecyclerView.LayoutManager fLayoutManager;
+    private String[] fDataset = {"chicken nuggets", "chicken, bread crumbs, oil", "dip the chicken in the bread crumbs, deep fry in oil"};
 
         @InjectView(R.id.toolbar)
         Toolbar toolbar;
@@ -32,9 +41,24 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.content_main);
-            ButterKnife.inject(this);
 
+
+
+            setContentView(R.layout.content_main);
+            fRecyclerView = (RecyclerView) findViewById(R.id.food_recycler_view);
+            // use this setting to improve performance if you know that changes
+            // in content do not change the layout size of the RecyclerView
+            fRecyclerView.setHasFixedSize(true);
+
+            // use a linear layout manager
+            fLayoutManager = new LinearLayoutManager(this);
+            fRecyclerView.setLayoutManager(fLayoutManager);
+
+            // specify an adapter
+            fAdapter = new FoodAdapter(fDataset);
+            fRecyclerView.setAdapter(fAdapter);
+
+            ButterKnife.inject(this);
 
             if (toolbar != null) {
                 setSupportActionBar(toolbar);

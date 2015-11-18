@@ -27,7 +27,7 @@ public class Vegetarian extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_salads);
+        setContentView(R.layout.activity_vegetarian);
         ButterKnife.inject(this);
 
 
