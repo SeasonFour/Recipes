@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
@@ -16,8 +17,11 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 
+import com.parse.GetCallback;
 import com.parse.Parse;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.yalantis.guillotine.animation.GuillotineAnimation;
 
 import butterknife.ButterKnife;
@@ -73,6 +77,27 @@ public class MainActivity extends AppCompatActivity {
                     .setActionBarViewForAnimation(toolbar)
                     .setClosedOnStart(true)
                     .build();
+
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Food");
+            query.getInBackground("1Y4VJGJzXv", new GetCallback<ParseObject>() {
+                public void done(ParseObject object, ParseException e) {
+                    ParseObject food = new ParseObject("Food");
+                    if (e == null) {
+                        Log.d("parse retrieve", "success");
+
+                        String name = object.getString("name");
+                        String ingredients =object.getString("ingredients");
+                        String cooking = object.getString("cooking_method");
+
+                        Log.d("name", ""+name);
+                        Log.d("ingredient", ""+ingredients);
+                        Log.d("method", ""+cooking);
+                    } else {
+                        // something went wrong
+                        Log.d("parse retrieve", "fail");
+                    }
+                }
+            });
         }
 
     public void featuredClick(View view){
