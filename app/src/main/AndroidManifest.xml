@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".Vegetarian" >
         </activity>
+        <activity android:name=".Featured" >
+        </activity>
     </application>
 
 </manifest>

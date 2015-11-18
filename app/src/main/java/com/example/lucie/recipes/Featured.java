@@ -3,13 +3,11 @@ package com.example.lucie.recipes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Vegetarian extends AppCompatActivity {
+public class Featured extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vegetarian);
-
-        //Query database to specify the type of vegeterian dish
+        setContentView(R.layout.activity_featured);
     }
 }
